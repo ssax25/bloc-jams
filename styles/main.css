@@ -1,3 +1,9 @@
+*, *:before, *:after {
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+ }
+
 html {
     background-color: #e6e9e9;
     background-image: -webkit-linear-gradient(270deg,rgb(230,233,233) 0%,rgb(216,221,221) 100%);
@@ -111,17 +117,13 @@ img {
 
 .selling-points {
      position: relative;
-     display: table;
-     width: 100%;
      -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
-     box-sizing: border-box; /* we'll explain this in a resource */
+     /* we'll explain this in a resource */
  }
  
  .point {
-     display: table-cell;
      position: relative;
-     width: 33.3%;
      padding: 2rem;
      text-align: center;
  }
@@ -136,3 +138,30 @@ img {
      color: rgb(233,50,117);
      font-size: 5rem;
  }
+
+.container {
+        margin: 0 auto;
+    max-width: 64rem;
+}
+
+/* Medium and small screens (640px) */
+ @media (min-width: 40rem) {
+   html { font-size: 112%; }
+      .column {
+         float: left;
+         padding-left: 1rem;
+         padding-right: 1rem;
+     }
+     .column.full { width: 100%; }
+     .column.two-thirds { width: 66.7%; }
+     .column.half { width: 50%; }
+     .column.third { width: 33.3%; }
+     .column.fourth { width: 25%; }
+     .column.flow-opposite { float: right; }  
+ }
+ 
+ /* Large screens (1024px) */
+ @media (min-width: 64rem) {
+    html { font-size: 120%; }
+ }
+ 
