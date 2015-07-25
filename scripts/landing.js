@@ -7,28 +7,32 @@ var animatePoints = function(points) {
          points[i].style.msTransform = "scaleX(1) translateY(0)";
          points[i].style.WebkitTransform = "scaleX(1) translateY(0)";   
     };
-    for (var i =0; i <=2; i++) {
-        revealPoint(i);
-    };
+//    for (var i =0; i <=2; i++) {
+//        revealPoint(i);
+//    };
 };
 
 window.onload = function() {
      
      // Automatically animates the points on a tall screen where scrolling can't trigger the animation
      if (window.innerHeight > 950) {
-         animatePoints(pointsArray);
+//         animatePoints(pointsArray);
+    forEach2(pointsArray, animatePoints);
+
      }
 
     window.addEventListener('scroll', function(event) {
          if (pointsArray[0].getBoundingClientRect().top <= 500) {
              animatePoints(pointsArray);
+        //console.log("The page is scrolling!");
+
          }
      });
  
 };
 
 
-//var = function(a, b, array) {
+//var = function (a, b, array) {
 // 
 
  
