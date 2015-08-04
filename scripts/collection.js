@@ -26,4 +26,5 @@ window.onload = function() {
          collectionContainer.innerHTML += collectionItemTemplate;
      }
      
- }
+ };
+
