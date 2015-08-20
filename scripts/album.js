@@ -85,48 +85,75 @@ var setCurrentAlbum = function(album) {
  };
 
 //use console.logs based on step you're at or the conditionals that might be exhibiting unexpected behavior
+var findParentByClassName = function(element, targetClass) {
+    
+    var currentParent = element.parentElement;
+    
+   
+    if (element.parentNode === undefined || element.parentNode === null) {
+        alert("No parent found");
+    }
+    //if parentnode doesn't exist then done otherwise going to while loop until you hit targetClass, null, or undefined
+    else
+    {
+        
+             while (currentParent.className != targetClass && currentParent != null && currentParent != "undefined") 
+             {
+                 currentParent = currentParent.parentElement;
+                 //this is the loop
+             }
+
+            if(currentParent === null || currentParent == "undefined")
+                 alert("No parent with target class found");
+            //broke out of the loop because hit null, undefinded
+            else
+                alert(" parent found with target className");
+            //otherwise it hit the targetClass
+
+            
+    }
+    
+    return currentParent;
+
+};
+
+
 //var findParentByClassName = function(element, targetClass) {
-//    
-//    var currentParent = element.parentElement;
-//    
-//    while (currentParent.className != targetClass || element.parentNode === undefined) {
-//        currentParent = currentParent.parentElement
-//        
+//     var currentParent = element.parentElement;
+//
 //        if (currentParent.className != targetClass) {
 //           currentParent = currentParent.parentElement;
 //           alert(currentParent.textContent + " Hello Steve!");
 //        }
-//        else if (element.parentNode === undefined || element.parentNode === null) {
-//            alert("No parent found");
-//        }
-//        else (element.parentNode != targetClass) {
+//
+//        else if (element.parentNode != targetClass) {
 //            alert("No parent found with that class name");
 //        }
+//        else if (element.parentNode !== currentParent) {
+//            alert("No parent found");
+//        }
+//    else {
+//    return;
 //    }
-//    
-//    return currentParent;
-//
 //};
 
-var findParentByClassName = function(element, targetClass) {
-     var currentParent = element.parentElement;
 
-        if (currentParent.className != targetClass) {
-           currentParent = currentParent.parentElement;
-           alert(currentParent.textContent + " Hello Steve!");
-        }
-
-        else if (element.parentNode != targetClass) {
-            alert("No parent found with that class name");
-        }
-        else if (element.parentNode !== currentParent) {
-            alert("No parent found");
-        }
-    else {
-    return;
-    }
-};
-
+//var findParentByClassName = function(element, targetClass) {
+//    var currentParent
+//    do {
+//        currentParent = element.parentElement
+//        
+//        if (currentParent === null) {
+//              alert("No parent found");
+//              break
+//        }
+//        else if (currentParent.className != targetClass) {
+//              alert("Class doesn't match")
+//              break           
+//        }
+//        alert("Match found");
+//    } while (currentParent.className != targetClass || currentParent != null) 
+//};
 
                
 var getSongItem = function(element) {

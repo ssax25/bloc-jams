@@ -1,27 +1,23 @@
-var pointsArray = document.getElementsByClassName('point');
- 
-var animatePoints = function(points) {               
+var animatePoints = function() {              
     var revealPoint = function(i) {
-         points[i].style.opacity = 1;
-         points[i].style.transform = "scaleX(1) translateY(0)";
-         points[i].style.msTransform = "scaleX(1) translateY(0)";
-         points[i].style.WebkitTransform = "scaleX(1) translateY(0)";   
+         var revealPoint = function() {
+             $(this).css({
+             opacity: 1,
+             transform: 'scaleX(1) translateY(0)'
+         });
     };
-    for (var i =0; i <=2; i++) {
-        revealPoint(i);
+    $.each($('.point'), revealPoint);
     };
 };
 
-window.onload = function() {
-     
-     // Automatically animates the points on a tall screen where scrolling can't trigger the animation
-     if (window.innerHeight > 950) {
-         animatePoints(pointsArray);
+$(window).load(function() {     
+     if ($(window).height() > 950 {
+         animatePoints();
      }
 
-    window.addEventListener('scroll', function(event) {
-         if (pointsArray[0].getBoundingClientRect().top <= 500) {
-             animatePoints(pointsArray);
+   $(window).scroll(funtion(event)
+         if($(window).scrollTop() >= 500 {
+            animatePoints();
          }
      });
  
