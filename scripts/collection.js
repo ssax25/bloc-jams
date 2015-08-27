@@ -13,7 +13,8 @@ var buildCollectionItemTemplate = function () {
   return $(template);
 };
 
-$(window).load(function () {
+//$(window).load(function () {
+$(document).ready(function() {
 
   // #1
   var $collectionContainer = $('.album-covers .clearfix');
@@ -25,7 +26,7 @@ $(window).load(function () {
     var $newThumbnail = buildCollectionItemTemplate();
     $collectionContainer.append($newThumbnail);
   }
-});
+}); 
 // var buildCollectionItemTemplate = function () {
 //  var template =
 //  '<div class="collection-album-container column fourth">'
