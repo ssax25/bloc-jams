@@ -13,8 +13,7 @@ var buildCollectionItemTemplate = function () {
   return $(template);
 };
 
-//$(window).load(function () {
-$(document).ready(function() {
+$(window).load(function () {
 
   // #1
   var $collectionContainer = $('.album-covers .clearfix');

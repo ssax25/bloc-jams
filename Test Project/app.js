@@ -3,14 +3,8 @@
    alert("Pick a healthy snack from the refrigerator!");
  
 
-    var oranges = function() {
-      $('.oranges').click(function(){
-        console.log("clicked oranges")
-        $( this ).css('border', "5px solid orange");
-        alert("You chose an orange");
-      });
-    };  
-     oranges();
+
+
 
     // var oranges = document.getElementsByClassName("oranges");
 
@@ -19,9 +13,8 @@
     //   alert("You chose an orange!");
     // };
 
-    var apples = function() {
-        $('.apples')[0].click(function() {
-          border: "5px solid red";
+    $('apples').click(function) {
+        $( this ).css('border', "5px solid red");
           alert("You chose an apple!");
         });
       };                 
